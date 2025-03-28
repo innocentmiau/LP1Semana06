@@ -43,9 +43,11 @@
             if (powerUp == Program.PowerUp.SHIELD)
             {
                 shield += value;
+                if (shield > 100) shield = 100;
                 return;
             }
             health += value;
+            if (health > 100) health = 100;
         }
 
         public void TakeDamage(float damage)

@@ -27,6 +27,17 @@
             shield = 0;
         }
 
+        public void PickPowerUp(Program.PowerUp powerUp, float value)
+        {
+            if (powerUp == Program.PowerUp.SHIELD)
+            {
+                shield += value;
+                return;
+            }
+
+            health += value;
+        }
+
         public void TakeDamage(float damage)
         {
             shield -= damage;

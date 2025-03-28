@@ -33,6 +33,25 @@ namespace MyGame
             {
                 Console.WriteLine($"{enemy.GetName()} {enemy.GetHealth()} {enemy.GetShield()}");
             }
+            
+            enemies[0].TakeDamage(50);
+            
+            foreach (Enemy enemy in enemies)
+            {
+                Console.WriteLine($"{enemy.GetName()} {enemy.GetHealth()} {enemy.GetShield()}");
+            }
+            
+            enemies[1].PickPowerUp(PowerUp.HEALTH, 50);
+            enemies[0].PickPowerUp(PowerUp.SHIELD, 9.5f);
+            
+            foreach (Enemy enemy in enemies)
+            {
+                Console.WriteLine($"{enemy.GetName()} {enemy.GetHealth()} {enemy.GetShield()}");
+            }
+        }
+        
+        public enum PowerUp {
+            HEALTH, SHIELD
         }
     }
 }

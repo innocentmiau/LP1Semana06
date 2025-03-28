@@ -6,11 +6,19 @@
         private string name;
         public string GetName() => name;
         private float health;
+        public float GetHealth() => health;
         private float shield;
+        public float GetShield() => shield;
+
+        public void SetName(string newName)
+        {
+            if (newName.Length > 8) newName = newName.Substring(0, 8);
+            name = newName;
+        }
         
         public Enemy(string name)
         {
-            this.name = name;
+            SetName(name);
             health = 100;
             shield = 0;
         }

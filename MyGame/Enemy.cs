@@ -10,6 +10,10 @@
         private float shield;
         public float GetShield() => shield;
 
+        /// <summary>
+        /// Set the name for your enemy.
+        /// </summary>
+        /// <param name="newName">The new name to be used. If bigger than 8 characters, then only the first 8 will be used.</param>
         public void SetName(string newName)
         {
             if (newName.Length > 8) newName = newName.Substring(0, 8);

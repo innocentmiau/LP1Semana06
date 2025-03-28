@@ -48,6 +48,10 @@ namespace MyGame
             {
                 Console.WriteLine($"{enemy.GetName()} {enemy.GetHealth()} {enemy.GetShield()}");
             }
+            
+            
+            Console.WriteLine($"Número de powerups usados: {Enemy.GetPowerUpCount()}");
+            
         }
         
         public enum PowerUp {

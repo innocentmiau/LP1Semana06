@@ -3,6 +3,7 @@
     public class Enemy
     {
 
+        
         private string name;
         public string GetName() => name;
         private float health;
@@ -10,6 +11,15 @@
         private float shield;
         public float GetShield() => shield;
 
+        private static int powerUpCount;
+        public static int GetPowerUpCount() => powerUpCount;
+        
+        static Enemy()
+        {
+            powerUpCount = 0;
+        }
+        
+        
         /// <summary>
         /// Set the name for your enemy.
         /// </summary>
@@ -29,12 +39,12 @@
 
         public void PickPowerUp(Program.PowerUp powerUp, float value)
         {
+            powerUpCount++;
             if (powerUp == Program.PowerUp.SHIELD)
             {
                 shield += value;
                 return;
             }
-
             health += value;
         }
 
